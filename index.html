@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Simultaneous Equations</title>
+		<style>
+			* {
+				padding: 0;
+				margin: 0;
+				overflow: hidden;
+			}
+
+			:focus {
+				outline: none;
+			}
+
+			table {
+				border-spacing: 0;
+				border-collapse: collapse;
+				overflow: visible;
+			}
+
+			tr {
+				width: 25vw;
+				height: 6vw;
+			}
+
+			td {
+				box-sizing: border-box;
+				padding: 0;
+				width: 6.25vw;
+				height: 6vw;
+				border: solid 1px black;
+				text-align: center;
+			}
+
+			#render {
+				width: 74vw;
+				height: 100vh;
+				float: right;
+			}
+
+			#input {
+				float: left;
+				width: 25vw;
+				height: 100vh;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<div id="input">
+				<table>
+					<tr>
+						<td id="x1" contenteditable="">1</td>
+						<td id="y1" contenteditable="">1</td>
+						<td id="z1" contenteditable="">1</td>
+						<td id="c1" contenteditable="">0</td>
+					</tr>
+					<tr>
+						<td id="x2" contenteditable="">1</td>
+						<td id="y2" contenteditable="">1</td>
+						<td id="z2" contenteditable="">1</td>
+						<td id="c2" contenteditable="">0</td>
+					</tr>
+					<tr>
+						<td id="x3" contenteditable="">1</td>
+						<td id="y3" contenteditable="">1</td>
+						<td id="z3" contenteditable="">1</td>
+						<td id="c3" contenteditable="">0</td>
+					</tr>
+				</table>
+				<button onclick="getFromHTML()">Render</button>
+			</div>
+			<div id="render"></div>
+		</div>
+		<script src="./js/ext/three.min.js"></script>
+		<script src="./js/helpers/mouseHelper.js"></script>
+		<script src="./js/main.js"></script>
+	</body>
+</html>
