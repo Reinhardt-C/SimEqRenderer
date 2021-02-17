@@ -49,19 +49,19 @@
 			}
 		</style>
 	</head>
-	<body>
+	<body onload="getFromHTML()">
 		<div id="app">
 			<div id="input">
 				<table>
 					<tr>
 						<td id="x1" contenteditable="">1</td>
-						<td id="y1" contenteditable="">1</td>
-						<td id="z1" contenteditable="">1</td>
-						<td id="c1" contenteditable="">0</td>
+						<td id="y1" contenteditable="">2</td>
+						<td id="z1" contenteditable="">3</td>
+						<td id="c1" contenteditable="">4</td>
 					</tr>
 					<tr>
-						<td id="x2" contenteditable="">1</td>
-						<td id="y2" contenteditable="">1</td>
+						<td id="x2" contenteditable="">3</td>
+						<td id="y2" contenteditable="">2</td>
 						<td id="z2" contenteditable="">1</td>
 						<td id="c2" contenteditable="">0</td>
 					</tr>
@@ -69,7 +69,7 @@
 						<td id="x3" contenteditable="">1</td>
 						<td id="y3" contenteditable="">1</td>
 						<td id="z3" contenteditable="">1</td>
-						<td id="c3" contenteditable="">0</td>
+						<td id="c3" contenteditable="">-4</td>
 					</tr>
 				</table>
 				<button onclick="getFromHTML()">Render</button>

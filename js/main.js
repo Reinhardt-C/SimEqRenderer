@@ -45,11 +45,11 @@ function remove(obj) {
 }
 
 // Add a plane to the scene
-function addPlane(x, y, z, c, k) {
+function addPlane(x, y, z, c, k, hue) {
 	// Scaling of c for viewing purposes
 	c *= k;
 	// Create base geometry of "plane" (it's a box)
-	const geometry = new THREE.BoxGeometry(100, 100, 1);
+	const geometry = new THREE.BoxGeometry(100, 100, 0.7);
 	// Get the normal vector
 	const normal = new THREE.Vector3(x, y, z);
 	// Create a quarternion from the required rotation from the default normal to the custom normal
@@ -68,7 +68,7 @@ function addPlane(x, y, z, c, k) {
 	// Material for rendering them with shading
 	const material = new THREE.MeshLambertMaterial({
 		// Random colour
-		color: `hsl(${Math.random() * 255}, 100%, 50%)`,
+		color: `hsl(${hue ?? Math.random() * 255}, 100%, 50%)`,
 		// Able to view from both sides (fudge)
 		side: THREE.DoubleSide,
 	});
@@ -81,7 +81,8 @@ function addPlane(x, y, z, c, k) {
 // Given a 4.3 matrix render planes for the equations
 function addMatrix(matrix, k) {
 	while (scene.children.length > 2) remove(scene.children[2]);
-	for (let i of matrix) addPlane(...i, k);
+	let hue = Math.random() * 255;
+	for (let i of matrix) addPlane(...i, k, (hue += 255 / 3));
 }
 
 // Quick helper function
